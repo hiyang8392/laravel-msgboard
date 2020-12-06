@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @foreach($posts as $post)
+            @foreach($posts as $idx => $post)
             <div class="card">
                 <div class="card-header">
-                    #{{ $post->id }} {{ $post->title }} | {{ $post->created_at }}
+                    #{{ $idx + 1 }} {{ $post->title }} | {{ $post->created_at }}
                     @auth
                     <a href="{{ route('posts.edit', [$post->id]) }}">(Edit)</a>
                     @endauth

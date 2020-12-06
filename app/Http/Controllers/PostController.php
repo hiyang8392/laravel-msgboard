@@ -40,12 +40,23 @@ class PostController extends Controller
             'content' => 'required',
         ]);
 
-        $post = new Post;
-        $post->title = request('title');
-        $post->content = request('content');
-        $post->user_id = \Auth::id();
-        $post->save();
+        Post::create([
+            'title' => request('title'),
+            'content' => request('content'),
+            'user_id' => \Auth::id(),
+        ]);
 
+        // $post = new Post;
+        // $post->title = request('title');
+        // $post->content = request('content');
+        // $post->user_id = \Auth::id();
+        // $post->save();
+
+        // DB::table('posts')->insert([
+        //     'title' => request('title'),
+        //     'content' => request('content'),
+        //     'user_id' => \Auth::id(),
+        // ]);
         return redirect()->to('/');
     }
 

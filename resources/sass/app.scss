@@ -7,6 +7,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
 .card {
     margin-bottom: 20px;
+}
+
+.py-4 .container {
+    padding-top: 55px;
 }
